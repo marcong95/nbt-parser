@@ -1,18 +1,18 @@
-// import Peg from 'pegjs'
-// import NbtGrammer from './nbt.pegjs'
+import readline from 'readline'
+import parser from './nbt.js'
 
-// const Parser = peg.generate(NbtGrammer)
+const rl = readline.createInterface(
+  process.stdin,
+  process.stdout
+)
 
-import Parser from './nbt.js'
+let input = ''
 
-/*  Tracer event example:
- *  { type: 'rule.enter', // or 'rule.match' or 'rule.fail'
- *    rule: 'start',
- *    location:
- *    { start: { offset: 0, line: 1, column: 1 },
- *      end: { offset: 0, line: 1, column: 1 } } }
- */
+rl.on('line', (line) => {
+  input += line
+})
 
-let input = '2.0d'
-let result = Parser.parse(input)
-console.log(result)
+rl.on('close', () => {
+  let result = parser.parse(input)
+  console.log(result)
+})
