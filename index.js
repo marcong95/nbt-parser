@@ -1,5 +1,5 @@
 import readline from 'readline'
-import parser from './nbt.js'
+import parser from './peg/nbt.js'
 
 const rl = readline.createInterface(
   process.stdin,

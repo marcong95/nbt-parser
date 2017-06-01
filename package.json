@@ -5,19 +5,22 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
+    "build": "gulp peg && gulp",
     "dev": "babel-node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha build/test/*.test.js"
   },
   "author": "Marco",
   "license": "WTFPL",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-preset-env": "^1.5.1",
-    "pegjs": "^0.10.0"
-  },
-  "devDependencies": {
+    "chai": "^4.0.0",
     "gulp": "^3.9.1",
-    "gulp-peg": "^0.2.0"
+    "gulp-babel": "^6.1.2",
+    "gulp-peg": "^0.2.0",
+    "mocha": "^3.4.2",
+    "pegjs": "^0.10.0"
   }
 }
