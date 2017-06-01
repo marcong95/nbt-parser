@@ -3,4 +3,6 @@ dist/
 
 # logs
 
+logs/
 *.log
+*.log.*
